@@ -22,6 +22,7 @@ async function fetchCities() {
   } catch (e) {
     return null;
   }
+
 }
 
 //Implementation of DOM manipulation to add cities
@@ -44,3 +45,7 @@ function addCityToDOM(id, city, description, image) {
 }
 
 export { init, fetchCities, addCityToDOM };
+
+
+
+

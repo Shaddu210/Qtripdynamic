@@ -1,3 +1,4 @@
+
 import config from "../conf/index.js";
 
 //Implementation to extract city from query params
@@ -141,6 +142,10 @@ function filterFunction(list, filters) {
   
   // Place holder for functionality to work in the Stubs
   return filteredlist;
+
+
+  // Place holder for functionality to work in the Stubs
+  return list;
 }
 
 //Implementation of localStorage API to save filters to local storage. This should get called everytime an onChange() happens in either of filter dropdowns
@@ -149,6 +154,7 @@ function saveFiltersToLocalStorage(filters) {
   // 1. Store the filters as a String to localStorage
   window.localStorage.setItem("filters", JSON.stringify(filters));
   console.log(filters);
+
   return true;
 }
 
@@ -159,6 +165,10 @@ function getFiltersFromLocalStorage() {
   let getFilter = localStorage.getItem("filters");
   let localEle = JSON.parse(getFilter);
   return localEle;
+
+
+  // Place holder for functionality to work in the Stubs
+  return null;
 }
 
 //Implementation of DOM manipulation to add the following filters to DOM :
@@ -178,6 +188,7 @@ function generateFilterPillsAndUpdateDOM(filters) {
     divElement.innerText = element;
     catEle.append(divElement);
   });
+
 }
 export {
   getCityFromURL,
