@@ -17,7 +17,7 @@ async function fetchCities() {
   // TODO: MODULE_CITIES
   // 1. Fetch cities using the Backend API and return the data
   try {
-    let cities =await fetch`(${config.backendEndpoint}/cities)`;
+    let cities =await fetch(`${config.backendEndpoint}/cities`);
     let data = await cities.json();
     return data;
   } catch (e) {
@@ -33,10 +33,10 @@ function addCityToDOM(id, city, description, image) {
   console.log(image);
   let divElement = document.createElement("div");
   console.log(city);
-  divElement.className = "col-6 col-lg-3 mb-4";
+  divElement.className ="col-6 col-lg-3 mb-4";
   divElement.innerHTML = `<a href="/pages/adventures/?city=${id}" id="${id}">
     <div class="tile text-white">
-    <img src="${image}" class="img-responsive">
+    <img src="${image}" class="img-responsive"/>
       <div class="tile-text text-center>
         <h5>${city}</h5>
         <p>${description}</p>
@@ -44,7 +44,7 @@ function addCityToDOM(id, city, description, image) {
      </div>
   </a>`
 
-  document.getElementById('data').append(divElement);
+  document.getElementById('data').appendChild(divElement);
 }
 
 export { init, fetchCities, addCityToDOM };
