@@ -5,6 +5,7 @@ import config from "../conf/index.js";
 function getCityFromURL(search) {
   // TODO: MODULE_ADVENTURES
   // 1. Extract the city id from the URL's Query Param and return it
+  
   const urlElement = new URLSearchParams(search);
   return urlElement.get("city");
   
@@ -17,8 +18,9 @@ async function fetchAdventures(city) {
   // 1. Fetch adventures using the Backend API and return the data
   try{
     const fecAdv = await fetch(config.backendEndpoint + `/adventures?city=${city}`);
-    const responce = await fecAdv.json();
-    return responce;
+    console.log(fecAdv);
+    const response = await fecAdv.json();
+    return response;
   } catch (err) {
       return null;
   }
@@ -168,7 +170,6 @@ function getFiltersFromLocalStorage() {
 
 
   // Place holder for functionality to work in the Stubs
-  return null;
 }
 
 //Implementation of DOM manipulation to add the following filters to DOM :
